@@ -1,4 +1,4 @@
-d3.json('http://api.eia.gov/series/?api_key=d4ac61ba04c07e0632b7f4800ae9a869&series_id=PET.M_EPOOXE_EEX_NUS-Z00_MBBL.M').then(function(d) {
+d3.json('https://api.eia.gov/series/?api_key=d4ac61ba04c07e0632b7f4800ae9a869&series_id=PET.M_EPOOXE_EEX_NUS-Z00_MBBL.M').then(function(d) {
     
     console.log(d);
     
