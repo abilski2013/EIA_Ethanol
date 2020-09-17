@@ -148,7 +148,7 @@ d3.json("https://api.eia.gov/series/?api_key=d4ac61ba04c07e0632b7f4800ae9a869&se
     for (var i in data) {
         for (var j in data[i].series[0].data) {
             
-            combined.push({"Name": data[i].series[0].description, "Date": data[i].series[0].data[j][0], "Value": data[i].series[0].data[j][1]});
+            combined.push({"Name": data[i].series[0].description, "Date": data[i].series[0].data[j][0], "Value": data[i].series[0].data[j][1], "Units": data[i].series[0].units, "Updated": data[i].series[0].updated});
         };
         
     };
@@ -164,10 +164,16 @@ d3.json("https://api.eia.gov/series/?api_key=d4ac61ba04c07e0632b7f4800ae9a869&se
                         <td>${tabledata[i].Name}</td>
                         <td>${tabledata[i].Date}</td>
                         <td>${tabledata[i].Value}</td>
+                        <td>${tabledata[i].Units}</td>
+                        <td>${tabledata[i].Updated}</td>
                    </tr>`;
         var table = $('#table-body')
         table.append(row)
         
     };
     
+});
+
+d3.json("https://api.eia.gov/series/?api_key=d4ac61ba04c07e0632b7f4800ae9a869&series_id=PET.M_EPOOXE_EEX_NUS-Z00_MBBL.M").then(function(d) {
+    console.log(d);
 });
