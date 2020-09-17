@@ -160,13 +160,8 @@ d3.json("https://api.eia.gov/series/?api_key=d4ac61ba04c07e0632b7f4800ae9a869&se
     var tabledata = obj.Data;
     
     for (var i in tabledata) {
-        var row = `<tr>
-                        <td>${tabledata[i].Name}</td>
-                        <td>${tabledata[i].Date}</td>
-                        <td>${tabledata[i].Value}</td>
-                        <td>${tabledata[i].Units}</td>
-                        <td>${tabledata[i].Updated}</td>
-                   </tr>`;
+//        var row =`<tr><td>${tabledata[i].Name}</td><td>${tabledata[i].Date}</td><td>${tabledata[i].Value}</td><td>${tabledata[i].Units}</td><td>${tabledata[i].Updated}</td></tr>`;
+        var row = "<tr><td>" + tabledata[i].Name + "</td><td>" + tabledata[i].Date + "</td><td>" + tabledata[i].Value + "</td><td>" + tabledata[i].Units + "</td><td>"+ tabledata[i].Updated + "</td></tr>";
         var table = $('#table-body')
         table.append(row)
         
